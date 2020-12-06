@@ -24,3 +24,7 @@ Your key must have access to Google Cloud text-to-speech and speech-to-text API'
 - say bye to quit
 - customize the brain
 - Have some more fun
+
+# Run brain test
+
+Make sure brains work correctly. Run unittest discover brain to run tests. I strongly recommend writing tests for every response of your customized brain.
