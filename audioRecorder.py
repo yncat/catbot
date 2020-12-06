@@ -40,7 +40,7 @@ class AudioRecorder:
                 talking = False
                 silence_started = time.time()
             # end talking
-            if talked and not talking and time.time()-silence_started > SILENCE_TIME_THRESHOLD:
+            if talked and not talking and time.time() - silence_started > SILENCE_TIME_THRESHOLD:
                 break
         # end process signal
         stream.stop_stream()

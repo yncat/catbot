@@ -23,10 +23,12 @@ class SpeechSynthesizer:
             input=input_text, voice=voice, audio_config=audio_config)
         bin = io.BytesIO(response.audio_content)
         wf = wave.open(bin, "rb")
-        stream = self.p.open(format=self.p.get_format_from_width(wf.getsampwidth()),
-                             channels=wf.getnchannels(),
-                             rate=wf.getframerate(),
-                             output=True)
+        stream = self.p.open(
+            format=self.p.get_format_from_width(
+                wf.getsampwidth()),
+            channels=wf.getnchannels(),
+            rate=wf.getframerate(),
+            output=True)
         chunk = 1024
         data = wf.readframes(chunk)
         while data:

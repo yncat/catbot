@@ -9,21 +9,31 @@ class TestEnglish_basicResponses(unittest.TestCase):
                          ("Hello.", False))
         self.assertEqual(brain.respondTo("Hello"),
                          ("Hello.", False))
-        self.assertEqual(brain.respondTo("what is your name"),
-                         ("My name is Jane Doe. The stupid developer didn't give me a name. I hate him.", False))
-        self.assertEqual(brain.respondTo("what's your name"),
-                         ("My name is Jane Doe. The stupid developer didn't give me a name. I hate him.", False))
+        self.assertEqual(
+            brain.respondTo("what is your name"),
+            ("My name is Jane Doe. The stupid developer didn't give me a name. I hate him.",
+             False))
+        self.assertEqual(
+            brain.respondTo("what's your name"),
+            ("My name is Jane Doe. The stupid developer didn't give me a name. I hate him.",
+             False))
 
     def test_regexpAnimals(self):
         brain = EnglishBrain()
-        self.assertEqual(brain.respondTo(
-            "do you think that cats are cute"), ("Yes! I absolutely agree!", False))
+        self.assertEqual(
+            brain.respondTo("do you think that cats are cute"),
+            ("Yes! I absolutely agree!",
+             False))
         self.assertEqual(brain.respondTo(
             "do you think cats are cute"), ("Yes! I absolutely agree!", False))
-        self.assertEqual(brain.respondTo(
-            "do you think that dogs are cute"), ("Oh. Yeah. I, agree. I'm not lying. You know.", False))
-        self.assertEqual(brain.respondTo(
-            "do you think dogs are cute"), ("Oh. Yeah. I, agree. I'm not lying. You know.", False))
+        self.assertEqual(
+            brain.respondTo("do you think that dogs are cute"),
+            ("Oh. Yeah. I, agree. I'm not lying. You know.",
+             False))
+        self.assertEqual(
+            brain.respondTo("do you think dogs are cute"),
+            ("Oh. Yeah. I, agree. I'm not lying. You know.",
+             False))
 
 
 class TestEnglish_exitResponses(unittest.TestCase):
@@ -54,5 +64,7 @@ class TestEnglish_say(unittest.TestCase):
 class TestEnglish_canYou(unittest.TestCase):
     def TestEnglish_CanYou(self):
         brain = EnglishBrain()
-        self.assertEqual(brain.respondTo(
-            "can you destroy the world"), ("I can't destroy the world.", False))
+        self.assertEqual(
+            brain.respondTo("can you destroy the world"),
+            ("I can't destroy the world.",
+             False))
