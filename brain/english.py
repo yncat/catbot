@@ -1,6 +1,6 @@
 from . import base
 import re
-
+from utils import multiReplace
 
 class EnglishBrain(base.BrainBase):
     def __init__(self):
@@ -45,6 +45,7 @@ class EnglishBrain(base.BrainBase):
         # can you
         m = re.match("can you (.+)", text)
         if m:
-            return "i can't %s" % m.group(1).replace("your", "my"), False
+            newstr = multiReplace.multiReplace(m.group(1), {"your": "my", "yourself": "myself"})
+            return "i can't %s" % newstr, False
         # end can you
         return "Sorry. I don't understand.", False
