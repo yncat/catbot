@@ -4,7 +4,7 @@ import wave
 import audioop
 import time
 
-RMS_THRESHOLD = 2000
+RMS_THRESHOLD = 1500
 SILENCE_TIME_THRESHOLD = 2.0
 CHUNK = 1024
 FORMAT = pyaudio.paInt16
